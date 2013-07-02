@@ -10,10 +10,6 @@
 \usepackage{amsmath}
 
 
-%SPACING
-\linespread{1.2}
-
-
 %%% STYLE OF PAGES NUMBERING
 \pagestyle{plain}
 
@@ -23,7 +19,7 @@
 \pagestyle{empty}
 \begin{center}
 {\Large \textbf{Webs on trees}\\}
-{\large \textbf{Understanding ecological network motifs through phylogenetics trees and backward\\}}
+{\large \textbf{Understanding the interplay between ecological network motifs and phylogenetic trees\\}}
 \vspace{1cm}
 {\large 
 Giulio Valentino Dalla Riva\\
@@ -33,7 +29,7 @@ Prof. Mike Steel (Mathematics and Statistics)\\
 Dr. Daniel Stouffer (Biology)}\\
 \end{center}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.5\textwidth]{images/UClogo}
 \end{figure}
@@ -52,6 +48,7 @@ $\cdot$ 2013 $\cdot$}
 
 %%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
 %%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+
 \chapter{Introduction}
 
 The anthropogenic pressure on the landscape and the living species communities is every day more evident. The biodiversity of the world is recognized as a precious, yet fragile, treasure and more and more efforts are done in order to preserve it, both in the local and in the global scale. A sensible conservation policy requires science to understand the current status of the ecological world and to develop tools with which to forecast its future status.
@@ -75,7 +72,7 @@ The evolutionary history of a species ensemble has non trivial influence on the 
 
 Interpretations of motifs in terms of ecological properties has been reviewed by Bascompte and Stouffer \cite{bascompte_assembly_2009}, while various field investigations have been and are being attempted (see for example Rip et al. \cite{rip_experimental_2010}). It has been argued that Phylogenetic Diversity arising from the evolutionary history of a species community may be a predictor of ecosystems functions: see  Srivastava et al. \cite{srivastava_phylogenetic_2012}, Gravel et al. \cite{gravel2010experimental}, Mouquet et al. \cite{mouquet2012ecophylogenetics}.
 
-\paragraph{Modelling}
+\section{Modelling}
 A survey of classical models, up to the models developed in 2002, can be found in Drossel and McKane \cite{drossel_modelling_2002}. The author focused on stability issues, covering both static and dynamical models. More recently, a number of models can be found in Pascual and Dunne \cite{pascual_ecological_2005}.
 
 Drossel and McKane proposed a model taking into account predator-prey dynamics (see \cite{drossel_influence_2000, mckane_models_2005} and references within) implementing Arditi-Ginzburg Predator-Prey ratio-dependent efforts \cite{arditi_coupling_1989} and traits evolution (the proportion of a prey $p$ in a predator $P$'s is given as the score of a traits matching matrix). In \cite{quince_topological_2005} they implemented other predator-prey dynamics, e.g., Lotka-Volterra, and observed that the model food web outcome didn't fit the empirical observed data. The model has been developed in order to study immigration-speciation processes \cite{powell_comparison_2009}, and complexity-stability relation \cite{plitzko_complexitystability_2012}.
@@ -84,7 +81,7 @@ Caldarelli and Garlaschelli proposed a general framework for the ecological netw
 
 It would be useful to reconstruct foodwebs structure along their historical evolution. Although detailed direct observations are yet to come, some attempts have been done, see Roopnarine et al. on paleocommunities \cite{roopnarine_networks_2010, roopnarine_red_2012} or Dunne et al. for the Cambrian period \cite{dunne_compilation_2008}. Another possibility has been introduced by Doi et al. \cite{doi_shorter_2012}: the author examined lakes spanning six order of magnitude different ages, and hence showing the result of shorter or longer evolution times.
 
-\paragraph{Extinction events, hybrids and Phylogenetic Diversity}
+\section{Extinction, hybrids and diversity}
 Extinction events prune the trees of life. This results in a loss of phylogenetic diversity, which depends clearly on which species goes extinct and which are retained.
 
 A basic model which is widely used to predict on the future biodiversity of a species community under extinction threat is the Field of Bullets model, introduced by Raup in 1984 \cite{raup1984evolutionary}. Since its introduction the model has been variously generalised and applied with good results.
@@ -101,18 +98,26 @@ With a different approach, a relationship between the survival probability of sp
 
 An explicit introduction of ecological constraints into a field of bullets extinction model has been proposed by Moulton et al. \cite{moulton2007optimizing}, where the authors used the concept of "viability", that is taking into account that every predator species has to predate at least on a species to survive. The model complexity has been studied by Faller et al. \cite{faller2011optimizing}.
 
-\paragraph{Species stability}
-Foodwebs have been described in terms of ecosystem stability under a perturbation regime ( which means, altering the population dynamic parameters, see for example Sol\'{e} and Bascompte \cite{sole2006self} for a recent overview). An usual approach is to consider linear or approximately linear population dynamics -- i.e., systems were the applied perturbation can be considered to produce a linear effect on the stable solution. As summarized by Sol\'{e} and Bascompte, ``Stability seems to be associated with diversity, but the exact nature of such association has been a matter of debates for decades'' and so it is currently, we can argue.
+\section{Species stability}\label{species_stability}
+Ecological networks can be seen as dynamical system, where the dynamic is ruled by the population dynamics process, such as predation processes, competition or cooperation. The quest for a proper definition of ecological network stability and for the identification of drivers of stability, date at least at May's works \cite{may1971stability, may1972will} on complexity and stability, where the author showed that the two don't always grow together.
+
+Stability may be approached as global property, hence focusing on the overall structure of the foodweb, or as a local property, hence focusing on the contribute of certain species to the overall stability.
+
+Foodwebs have been described in terms of ecosystem stability under a perturbation regime ( which means, altering the population dynamic parameters, see for example Sol\'{e} and Bascompte \cite{sole2006self} for a recent overview). An usual approach is to consider linear or approximately linear population dynamics -- i.e., systems were the applied perturbation can be considered to produce a linear effect on the stable solution. A review of the approaches for measuring the response of ecological systems to perturbation can be found in Neubert and Caswell \cite{neubert1997alternatives}.
+
+More recently Berg \cite{berg2013community} (see also \cite{berg2011using}) developed sensitivity based measures to identify keystone species in foodwebs.
 
 Working on protein transcription networks and neuron networks, Prill et al. \cite{prill2005dynamic} gave a numerical characterization of 3-motifs and 4-motifs in terms of stability through a Structural Stability Score, defined as the probability that the dynamical system corresponding to a given motif relaxes monotonically to the stable equilibrium after a small linear perturbation. Significantly the authors found a positive correlation between the SSS score of a motif and its over or under representation in an empirical network.
+
+In a recent work \cite{stouffer_evolutionary_2012} Stouffer et al. suggest that "species dynamic importance, the degree to which a species acts as a keystone species, may indeed be an intrinsic and inherent species attribute that arises as a consequence of species’ evolutionary histories", mediated by the species motifs distributions, which indeed exhibit a phylogenetic signal.
 
 \chapter{Research objectives and approach}
 
 We aim to discover the relationship between phylogenetic evolution and foodweb evolution.
 
-A main focus of the thesis trying to disentangle the correlation between basic trophic network structural elements, such as elementary predator-preys linking, foodweb motifs, node or edge roles (as depicted in figure~\ref{fig:motifs}), and phylogenetic tree properties, such as phylogenetic diversity, pairwise distance between leaves, clades and clans. In this scenario, some foundational question are yet to be answered.
+A main focus of the thesis will be on the correlation between basic trophic network structural elements, such as elementary predator-preys linking, foodweb motifs, node or edge roles (as depicted in figure~\ref{fig:motifs}), and phylogenetic tree properties, such as phylogenetic diversity, pairwise distance between leaves, clades and clans. In this scenario, some foundational question are yet to be answered.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.6\textwidth]{images/motifs}
 		\caption{The different edge roles in the five most common predation motifs.}
@@ -123,10 +128,11 @@ A main focus of the thesis trying to disentangle the correlation between basic t
 One problem, that will need to be solved, arises from the merging of data coming from two different empirical sources: genetic sequencing studies and foodwebs observation. The usual empirical data are given in the form of an ecological community which phylogeny is reconstructed and the species are mapped in a foodweb. This gives a straightforward mapping of the phylogenetic tree leaves into the trophic relationship graph. The food can be variably detailed in terms of guilds census (how many extant species and trophic relationship are present in the given foodweb) and taxonomic resolution (how coarse is the identification of the guilds taxonomy). Analog uncertainty can be present in the phylogeny reconstruction, which may vary from a topological tree given by the taxonomic classification to a tree reconstructed from the actual genome sequencing of the observed species.
 
 
-\section{Coupling ecological roles and phylogenetic structure}
+\section{Coupling ecological roles and phylogenetic structure}\label{motifs_and_triplets}
 
 \subsection{Foodweb and tree motifs}
-Let $\uptau$ be the phylogenetic tree of the species in a certain ecological community and $\upomega$ its trophic relationship graph, the foodweb. Call $l_1, l_2, \dots , l_n$ the leaves of $\uptau$, we will use the same name to identify the species in the foodweb.\begin{figure}[h]
+Let $\uptau$ be the phylogenetic tree of the species in a certain ecological community and $\upomega$ its trophic relationship graph, the foodweb. Call $l_1, l_2, \dots , l_n$ the leaves of $\uptau$, we will use the same name to identify the species in the foodweb.
+\begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.8\textwidth]{images/phylogeny}
 		\caption{A Phylogenetic Tree, the shadowed zones hides other branches and leaves.}
@@ -134,7 +140,7 @@ Let $\uptau$ be the phylogenetic tree of the species in a certain ecological com
 \end{figure}
 
 We will express $\upomega$ in terms of its community adjacency matrix $M_{\omega}$ which elements $m_{\omega}^{ij}$ are equal to $1$ if and only if there's a link between node $i$ and $j$, and hence if and only if the species $l_i$ predates on the species $l_j$. Through the tree $\uptau$ we can define a phylogenetic distance matrix $M_{PD}$ which elements $m_{PD}^{ij}$ are given by the phylogenetic distance $Pd_{ij}$ between the species $l_i$ and $l_j$. As $Pd_{ij} = Pd_{ji}$, $M_{PD}$ is a symmetric matrix.
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.5\textwidth]{images/foodweb}
 		\caption{In this foodweb, and in all the proposal, we draw a link from a node $i$ to a node $j$ whenever species $i$ predates on$j$.}
@@ -160,12 +166,14 @@ We will, then, study the identity mapping of foodweb elements triplets, called 3
 
 We will call \emph{triangle of distances} a triplet $T_{ijk}=\{Pd_{ij},Pd_{jk},Pd_{ki}\}$ of mutual phylogenetic distances between three elements of the ecological community. Figure~\ref{fig:phylogenetictriplets} represents a triangle between the species $l_i, l_k, l_j$.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.3\textwidth]{images/phylogenetictriplets}
 		\caption{A triangle of phylogenetic distances.}
 		\label{fig:phylogenetictriplets}
 \end{figure}
+
+There are 13 possible 3-nodes: eight of these have at least a double link, that is two nodes linking each other, while five have only single links. In empirical foodwebs double links are rare (and so are cannibalistic links), see for example Appendix A in Camacho et al. \cite{camacho_quantitative_2007}. Indeed, the five motifs with only single links constitute the large majority of the overall motifs\footnote{CITATION NEEDED}. Hence, we will focus initially just on the single links motifs: however, the analysis can be extended to the eight double links motifs and the greater dimension motifs including more than three nodes.
 
 In the basic five 3-motifs, the ones without mutual predation relationship, we have 8 topologically different relationship $r_i$, as depicted in figure~\ref{fig:motifs}. If a connected subgraph $\upomega(i,j,k)$ is isomorphic to a certain motif with its edges in positions $r_z$, $r_{z'}$, $r_{z''}$ we will write \[\upomega(i,j,k) \to m(z,z',z'') \, .\]
 
@@ -174,11 +182,10 @@ The question 2) has now a straightforward extension: we want to give \[\mathbb{E
 The generalization of question 1) requires more attention.
 
 We should notice that each predation relationship, the link $(i,j)$, can be part of various motifs including the species $l_i$, $l_j$ and a third species completing the motif, as shown in figure~\ref{fig:starij}.
-
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
-		\includegraphics[width=0.3\textwidth]{images/starij}
-		\caption{The neighborhood of the link $(i,j)$. In this example we will have $\underline{m}(i,j)=\{0,1,2,1,1,1,0,0\}$.}
+		\includegraphics[width=0.5\textwidth]{images/starij}
+		\caption{The neighborhood of $(i,j)$. Here $\underline{m}(i,j)=\{0,1,2,1,1,1,0,0\}$.}
 		\label{fig:starij}
 \end{figure}
 
@@ -206,9 +213,21 @@ A more refined null model can be retrieved by considering the probabilistic nich
 Moreover, we can compare the model data with the data retrieved from the empirical observed network.
 
 
-\section{Toward a simple speciation/predation model}
+\section{Toward a speciation/predation model}
 
 An insight into the mechanisms relating foodwebs evolution and speciation/extinction events can be acquired through the development of a suitable model which will be studied both from an analytical point of view and software  implemented.
+
+We will develop the model starting from a the most basic implementation possible, adding gradually complexity at each step. The key element will be defining what happens to the population of predators and preys of a species $l_i$ when $l_i$ speciate.
+
+For sake of simplicity, we will allow only just bifurcation events, where one species originates two daughters. Moreover, we will assume that one of the daughter will be identical to the mother while the other, the active daughter, may change its place in the foodweb. Another strong simplification for the base model will be to consider only topological phylogenetic trees, hence omitting any information on the length of the branches or the phylogenetic distance between two species. Such a simplistic model is described in \ref{elementary_model}.
+
+Generalisations and developments of the model will come considering more complex rewiring algorithms for the active daughter, as summarized in \ref{rewiring_model}, considering both the daughter active, and taking explicitly into account more complex ecological and phylogenetic information, as sketched in \ref{complex_model}, possibly including the statistical insight retrieved studying the interplay between motifs and triplets (see section~\ref{motifs_and_triplets}).
+
+Beside the analytical definition of the models, software simulation of them will be done, possibly in collaboration with Dr. Jordan Ferenc and the use of the stochastic simulation language L developed by COSBI lab.
+
+During the research it would be necessary to develop a set of benchmarks with which to judge the quality of the proposed model: possible benchmarks include the distribution of top and base species, the connectivity, the overall foodweb nodes degree distribution, the overall foodweb motifs distribution, the nodes motifs distribution, ... .
+
+\subsection{A most elementary model}\label{elementary_model}
 
 Consider a certain ecological community given by a set of species $C_t$ at time $t$, let $\uptau_t$ be its phylogenetic tree at time $t$ and $\upomega_t$ its trophic relationship graph (the foodweb) at time $t$. Call $l_1, l_2, \dots , l_n$ the leaves of $\uptau_t$.
 
@@ -218,7 +237,7 @@ We will use the same naming also for the species in $\upomega_t$ without fear of
 
 Each species $l_i$ can be chosen for a speciation event at the same rate $\sigma$. When the species $l_i$ is chosen at time $t$ for speciation it gives birth to two species $l_i'$ and $l_i''$, see fig.~\ref{fig:phylogenydeltat}. Hence, we will observe the building of a classical Yule random tree.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.8\textwidth]{images/phylogenydeltat}
 		\caption{The phylogenetic tree $\uptau$ at time $t + \delta t$ has two new species, $l'_i$ and $l''_i$.}
@@ -227,11 +246,11 @@ Each species $l_i$ can be chosen for a speciation event at the same rate $\sigma
 
 \paragraph{Imperfect duplication}
 
-To keep the model to the most simple case possible, we will assume that the place of one of the two siblings, $l_i''$, in $\upomega_{t + \delta t}$ will duplicate exactly the place of $l_i$ in $\upomega_t$. The other daughter will get rid of one of her ancestor predators with probability $p$ and, independently from this, will add one new prey to her diet with probability $q$.
+To keep the model to the most simple case possible, we will assume that the place of one of the two siblings, $l_i''$, in $\upomega_{t + \delta t}$ will duplicate exactly the place of $l_i$ in $\upomega_t$. The other daughter will get rid of one of her ancestor predators with probability $p$ and, independently from this, will add one new prey to her diet with probability $q$. We impose initially $p = q$.
 
-In this model the predator will be drawn uniformly at random in the set $P(l_i)$ of the predators of $l_i$ and the prey will be chosen uniformly at random from $pp_{t}(l_i)$, which is the set of species $l_p$ in $C_t$ such that were no path from $l_p$ to $l_i$. Hence, we do not allow for the formation of predation chain relationship. The mechanism is depicted in figure~\ref{fig:fwspec1p}
+In this model the predator will be drawn uniformly at random in the set $P(l_i)$ of the predators of $l_i$ and the prey will be chosen uniformly at random from $pp_{t}(l_i)$, which is the set of species $l_p$ in $C_t$ such that there are no path from $l_p$ to $l_i$. Hence, we do not allow for the formation of predation chain relationship. The mechanism is depicted in figure~\ref{fig:fwspec1p}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.8\textwidth]{images/fwspec1p}
 		\caption{The rewiring of a species' foodweb neighbourhood during a speciation event in the imperfect duplication model.}
@@ -243,40 +262,46 @@ What happens to the in- (and out-) degree of the graph during a speciation event
 If both siblings just duplicated their mother, $$\delta^{in}_{l_i'}(t+\delta t)=\delta^{in}_{l''_i}(t+\delta t)=\delta^{in}_{l_i}(t) \, \, .$$ At the same time all predators of $l_i$ will acquire one more prey and all prey of $l_i$ will have one more predator.
 Hence $$\delta^{in}_{tot}(t + \delta t) = \delta^{in}_{tot}(t) + \delta_{l_i}(t).$$
 
-If $l_i'$ get rid of a predator, $l_i'$ in-degree decreases by one and the out-degree of the lost predator decreases by one. On the other hand, if $l_i'$ acquire a new prey, $l_i'$ out-degree increases by one and the in-degree of the new prey increases by one. Hence, if $l_i$ speciates at time $t$ and we don't have other speciation before $t + \delta t$, we have that
-
-\begin{equation}
-\mathbb{E}\left[\delta^{in}_{tot}(t + \delta t)\right] = \delta^{in}_{tot}(t) + \delta_{l_i}(t) + q - p
-\end{equation}
-
-which reduces, if $p = q$, to
+If $l_i'$ get rid of a predator, $l_i'$ in-degree decreases by one and the out-degree of the lost predator decreases by one. On the other hand, if $l_i'$ acquire a new prey, $l_i'$ out-degree increases by one and the in-degree of the new prey increases by one. Hence, if $l_i$ speciates at time $t$ and we don't have other speciation before $t + \delta t$, we have that, assuming $p = q$,
 
 \begin{equation}
 \mathbb{E}\left[\delta^{in}_{tot}(t + \delta t)\right] = \delta^{in}_{tot}(t) + \delta_{l_i}(t) \, \, .
 \end{equation}
 
-Moreover, naming $\widehat{\delta^{in}}(t)$ the mean degree at time $t$, during one speciation event occurring in the interval $\left[t,t + \delta t \right]$, assuming no other speciation event happen in that time, and remembering that $\hat{\delta}(t)=2\widehat{\delta^{in}}(t)$ for each time $t$, we'll have that
+Moreover, naming $\widehat{\delta^{in}}(t)$ the mean degree at time $t$, during one speciation event occurring in the interval $\left[t,t + \delta t \right]$, assuming no other speciation event happen in that time, and remembering that $\hat{\delta}(t)=2\widehat{\delta^{in}}(t)$ for each time $t$, we'll have that, for $p = q$,
 
 \begin{equation}
-\mathbb{E}\left[\widehat{\delta^{in}}(t + \delta t)\right] = \frac{(|C_t|+2)\widehat{\delta^{in}}(t)}{|C_t|+1} + \frac{q - p}{|C_t|+1}
+\mathbb{E}\left[\widehat{\delta^{in}}(t + \delta t)\right] = \widehat{\delta^{in}}(t) +  \frac{\widehat{\delta^{in}}(t)}{|C_t|+1} \, \, .
 \end{equation}
 
-which reduces, for $p = q$, to
+\subsection{Non trivial rewiring}\label{rewiring_model}
 
-\begin{equation}
-\mathbb{E}\left[\widehat{\delta^{in}}(t + \delta t)\right] = \widehat{\delta^{in}}(t) +  \frac{\widehat{\delta^{in}}(t)}{|C_t|+1}
-\end{equation}
+More natural rewiring mechanism can be given following various possible generalisation.
 
-\paragraph{Random partition}
+We can consider different $p$, $q$ values, so to distinguish between predators lost and preys adding. Moreover, we may consider also predators adding and preys lost, for example due to invasion or geographic drift, hence considering four different probability values $p_l$, $p_a$, $q_l$, $q_a$. In this scenario the set of potential predators of $l_i$, which is $Pp_t(l_i)$, will be given by those species $l_j$ such that a predation link between $l_j$ and $l_i$ would not result in a predation chain.
 
-\begin{figure}[h]
+\paragraph{Niche partition model}
+
+\begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.8\textwidth]{images/fwspec2p}
 		\caption{The rewiring of a species' foodweb neighbourhood during a speciation event in the niche partition model.}
 		\label{fig:fwspec2p}
 \end{figure}
 
-Another rewiring mechanism for the foodweb during a speciation event is the niche partition model. As before one of the two siblings keep the same place of her ancestor in the foodweb. The active daughter preserves each of her ancestor predator with a probability $p$ (that is, gets rid of it with probability $1-p$) and preserves each prey with probability $q$ (that is, loses it with probability $1-q$). Moreover, the daughter which changing its niche may add new prey in her diet drawing from the set of potential prey $pp_{t}(l_i)$ (which, similarly to what done in the previous model, is the set of species $l_p$ in $C_t$ such that aren't paths from $l_p$ to $l_i$). The active daughter add each species in $pp_{t}(l_i)$ to her diet with probability $$d = \frac{k}{|pp_t(l_i)|}$$  so that the overall probability of adding at least a new prey is \[ \mathbb{P}(\mbox{add at least one species}) = 1 - \left( 1 - d\right)^{|pp_t(l_i)|} \, . \]  The mechanism is depicted in figure~\ref{fig:fwspec2p}.
+Instead of considering just the adding or erasing of one link, multiple link can be concurrently rewired, producing what we may call a niche partition.
+
+As before one of the two siblings keep the same place of her ancestor in the foodweb. The active daughter, $l_i$, preserves each of her ancestor predator with a probability $p$ and preserves each prey with probability $q$. Moreover, she may acquire new preys from $pp_{t}(l_i)$ or acquire new predators from $Pp_t{l_i}$. The active daughter add each new prey or predator to her diet with probability respectively $$d = \frac{k}{|pp_t(l_i)|}$$ and $$D = \frac{K}{|Pp_t(l_i)|}$$  so that the overall probability of adding at least a new prey is, respectively, \[ \mathbb{P}(\mbox{add at least one prey}) = 1 - \left( 1 - d\right)^{|pp_t(l_i)|} \, \, , \] and \[ \mathbb{P}(\mbox{add at least one predator}) = 1 - \left( 1 - D\right)^{|Pp_t(l_i)|} \, \, . \]   The mechanism is depicted in figure~\ref{fig:fwspec2p}.
+
+\subsection{Ecological and Phylogenetic informations}\label{complex_model}
+
+The model can be further developed in order to include more detailed ecological and phylogenetic network.
+
+In the previous basic models the rewiring were independent from the phylogenetic distance between the active node, the original target of the link and the new target of the link. The results of section~\ref{motifs_and_triplets} can be used to define rewiring mechanism where the rewiring targets are chosen with different probabilities depending on their position on the phylogenetic tree.
+
+More complex ecological constraints can be taken into account: species may tend to preserve their ancestor degree distribution (which is in some amount granted by the basic models), the overall foodweb motifs distribution (a global rule), their ancestor motifs distribution (a local rule) or their neighbourhood motifs distribution (which may be due to a cost of altering their neighbours motifs distribution).
+
+Moreover, the model may include extinction events: in the previous sections we explored how speciation events may rewire a foodweb. Similarly, we may ask how extinction events rewire the foodweb. Different extinction dependent rewiring models can be used in connections with ecological aware generalisation of the Field of Bullets model to include network properties in the Noah's ark problem, as sketched in section~\ref{network_diversity}. 
 
 \section{Extinction under complex ecological constraints}
 
@@ -288,7 +313,7 @@ Insights can be gathered from both a pure analytical approach, working with arti
 
 We just show briefly two possible initial model, which will be developed during the thesis research. 
 
-\subsection*{clade size weighted extinction}
+\subsection{Clade size weighted extinction}
 Very poor branches of the tree of life, such as just saved from extinction species or small isolated population may have lower probability to survive from a changing habitat.
 
 We propose a model of random extinction which takes into account this issue.
@@ -306,7 +331,7 @@ When the extinction walk ends, all the species descending from the selected node
 
 In general, varying the values of $\beta$ and $\alpha$ (as long as they're both positive), a continuous of scenario where isolated branches goes extinct can be modeled. Notice that if $\alpha \to \infty$ and $\beta = 0$ then the model is simply the classic Field of Bullets model.
 
-\subsection*{Survival through hybridization}
+\subsection{Survival through hybridization}
 
 \paragraph{Motivation}
 
@@ -316,7 +341,7 @@ Notice that, without hybridization, protecting the species $A$ and $C$ (scenario
 
 We will now analyze the expected Phylogenetic Diversity scenario, in the case with hybridization, in the spirit of Becker et al. A careful choice should be made when defining the weight of a hybrid species. We will introduce our choice with a suitable example.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.5\textwidth]{images/hybridbc}
 		\caption{A phylogenetic tree where the species $B$ and $C$ generated an hybrid $h_{bc}$.}
@@ -328,7 +353,7 @@ Let $h_{bc}$ be a hybrid generated by the species $B$ and $C$, as in figure~\ref
 
 When computing the expected PD, we will consider that a part of the evolutionary history of $C$ is conserved in $h_{bc}$, precisely a proportion equal to $\delta$, and, at the same time a proportion $(1-\delta$ of the evolutionary history of $B$ is conserved in $h_{bc}$. These can be expressed imposing that the branch connecting $h_{bc}$ to $C$ is attached at a $\delta$ of its length, as in figure~\ref{fig:hybridbcdeltalambda}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.7\textwidth]{images/hybridbcdeltalambda}
 		\caption{The hybrid $h_{bc}$ conserve $\delta$ ($(1-\delta)$) of the evolutionary history of species $C$ ($B$), nearby the branches we show their length.}
@@ -339,22 +364,32 @@ Given the length of the various branches in the original phylogeny (the one with
 
 We will model hybridization through a random process occurring with a probability depending on the evolutionary history of the species \[\mathbb{P}(H(i,j))=\frac{1}{\mbox{k } d(i,j)}\] where $k$ is a scale factor ($\mbox{k}\geq 1$), $d(i,j)$ is the phylogenetic distance between species $i$ and $j$ normalized so that the shortest branch in the phylogeny has length $1$, so to have $\min_{i,j}(d(i,j)) \geq 2$. Moreover, if a species is extinct or doomed, that is, has zero survival probability, its probability to generate a hybrid is also zero.
 
-In the case where a hybrid may be originated, its PD contribution will be weighted by both the hybridization probability, $H(i,j)$, and the survival probability, $p_h$, of the hybrid. 
+In the case where a hybrid may be originated, its PD contribution will be weighted by both the hybridization probability, $H(i,j)$, and the survival probability, $p_h$, of the hybrid.
 
-\appendix
-\chapter{Work Plan}
-\begin{figure}[h]
-		\includegraphics[width=\textwidth]{images/PhD_gantt_center}
-		\caption{Gantt diagram of the PhD work tasks. See last page for better resolution}
-\end{figure}
+\subsection{Network diversity}\label{network_diversity}
+
+The Noah's Ark Problem requires to maximize the Phylogenetic Diversity under certain constraints. The problem may be generalised taking into account other desired property of the surviving ecological network of species: we know, for example, that different foodweb structures can be more or less resilient to small perturbation. Moreover, as species show different motifs distribution, which means they have a different weight in the overall stability, their extinction produce greater or smaller impact in the ecosystem.
+
+On one hand, hence, we can take into account local network properties, i.e. the motifs distribution of each species, possibly expressed as a stability index. On the other hand, we can decide to observe global network properties, i.e. one of the various foodweb overall stability definitions (see the literature cited in section~\ref{species_stability}).
+
+In the local prospective, the extinction of a species produces a certain loss of Phylogenetic Diversity and the ecological network loses that species contribute to the overall stability. Hence, under a Field of Bullets model, we can ask how much Phylogenetic Diversity and overall stability index are expected to be lost. A solution to a so generalised Noah's Ark Problem is the conservation policy which maximize, under certain constrains, the expected PD and overall stability sum (or a more proper functional of them).
+
+In a global prospective, studying the changes of ecological network properties such as network stability, overall motifs distribution, connectedness, due to an extinction event requires to understand how the extinction event rewires the foodweb structure (which will be explored in the task~\ref{complex_model}). Once adopted a rewiring model, we can state again a generalised Fields of Bullets extinction model and a related Noah's Ark Problem.
+
+A third approach may be obtained considering a network property, developed in the context of control theory, named \emph{controllability}. As recently proposed by Liu et al. \cite{liu2011controllability} the problem of controllability may be posed in terms of identifying the minimum number of driver nodes (nodes on which we can act directly) are required to have a controllable system, that is a system that can be forced, from any initial state, to reach any required final state in finite time, through a proper set of inputs. Again, we can pose the problem within a local or a global point of view: in the latter prospective we can compute how many extinctions may occur in an ecosystems without losing controllability, in the former prospective we can express the desire to retain leaves of the tree which are driver nodes necessary for the controllability of the system.
 
 \begin{small}
 \bibliographystyle{siam}
 \bibliography{research_proposal}
 \end{small}
 
-\begin{figure}[h]
-		\includegraphics[width=1.6\textwidth, angle=90]{images/PhD_gantt_center}
+\newpage
+
+\begin{figure}[t]
+   \begin{center}
+   	\includegraphics[height=0.27\textheight, angle=90]{images/PhD_gantt_center}
+   	\caption{Research work plan}
+    \end{center}
 \end{figure}
 
 \end{document}
